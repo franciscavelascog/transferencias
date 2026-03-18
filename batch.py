@@ -1,6 +1,6 @@
-import math
 import time
 import uuid
+from datetime import datetime
 from typing import Any
 
 import config
@@ -32,7 +32,7 @@ def create_transfers(total_amount: int, counterparty: dict) -> list[dict]:
     results = []
     for i, amount in enumerate(chunks, start=1):
         idempotency_key = str(uuid.uuid4())
-        comment = f"Lote {i}/{n}"
+        comment = f"Batch {i}/{n} {datetime.now().strftime('%Y%m%d%H%M%S')}"
 
         print(f"[{i}/{n}] Creando transferencia de ${amount:,} CLP... ", end="", flush=True)
         try:

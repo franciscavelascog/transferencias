@@ -43,7 +43,7 @@ def main():
 
     print(f"Simulando ingreso de ${args.amount:,} CLP a la cuenta de prueba...")
     result = simulate_inbound(args.amount)
-    print(f"  ✓ Transferencia simulada: {result['id']}")
+    print(f"  OK Transferencia simulada: {result['id']}")
     print(f"  Estado  : {result['status']}")
     print(f"  Monto   : ${result['amount']:,} {result['currency']}")
     print(f"  Dirección: {result['direction']}")
